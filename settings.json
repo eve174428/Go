@@ -1,25 +1,24 @@
 {
-   //=======================Go=======================
+   //golang
    "[go]":{
       "editor.formatOnSave": true,
       "editor.codeActionsOnSave": {
          "source.organizeImports": true
-      }
+      },
    },
-   "go.testOnSave": true,
-   "go.lintOnSave": "package",
    "go.formatTool": "goimports",
+   "go.lintOnSave": "package",
+   "go.testOnSave": true,
    "go.testFlags": ["-v"],
    "go.autocompleteUnimportedPackages": true,
    "gopls": {
       "experimentalWorkspaceModule": true,
    },
-
-   "bracket-pair-colorizer-2.colors": [
-      "Gold",
-      "Orchid",
-      "LightSkyBlue"
-   ],
+ "bracket-pair-colorizer-2.colors": [
+                                      "Gold",
+                                      "Orchid",
+                                      "LightSkyBlue"
+                                    ],
 
    //已開啟的編輯器會讓每次開檔/關檔的時候，檔案總管的檔案清單上下位置晃動，以致於眼球需要經常重新定位，分散注意力。
    //由於已經有「頁籤」可以看已開啟的檔案，用 Ctrl+E 也可以快速找檔案，所以已開啟的編輯器就沒那麼有實用價值了。
@@ -37,8 +36,8 @@
    // 控制編輯器是否應自動設定貼上的內容格式。格式器必須可供使用，而且格式器應該能夠設定文件中一個範圍的格式。
    "editor.cursorStyle": "block",
    "editor.formatOnPaste": false,                       // 關閉程式碼時會自動排版
-   "editor.formatOnSave": false,                        // 關閉程式碼存檔時自動排版(縮排)
-   "editor.defaultFormatter": "esbenp.prettier-vscode", // 指定排版工具(預設)
+ "editor.formatOnSave": false,                        // 關閉程式碼存檔時自動排版(縮排)
+ "editor.defaultFormatter": "esbenp.prettier-vscode", // 指定排版工具(預設)
 
    "[css]": {
     "editor.formatOnPaste": true,
@@ -101,13 +100,13 @@
    "editor.rulers": [
      120
    ],
-   "editor.renderLineHighlight" : "line", // line、all
-   "workbench.colorCustomizations": {
+ "editor.renderLineHighlight" : "line", // line、all
+ "workbench.colorCustomizations": {
    "editor.lineHighlightBackground": "#00000090",
    "editor.lineHighlightBorder": "#ffffff30"
-   },
-   "workbench.colorTheme": "Visual Studio Dark", //Default Light+、Solarized Dark、Monokai
-   "workbench.iconTheme": "vscode-icons",
+ },
+ "workbench.colorTheme": "Visual Studio Dark", //Default Light+、Solarized Dark、Monokai
+"workbench.iconTheme": "material-icon-theme",
    // 控制功能表列的可見度。[切換] 設定表示會隱藏功能表列，按一下 Alt 鍵則會顯示。
    // 除非視窗是全螢幕，否則預設會顯示功能表列。
  // "window.menuBarVisibility": "toggle",
@@ -143,8 +142,8 @@
       "javascript": "javascriptreact", // html
       "ejs": "html"
    },
-   // 啟用後，按下 TAB 鍵，將展開 Emmet 縮寫
-   "emmet.triggerExpansionOnTab": true,
+ // 啟用後，按下 TAB 鍵，將展開 Emmet 縮寫
+ "emmet.triggerExpansionOnTab": true,
    //======================= 終端機設定 =======================================//
    // 預設使用 64-bit cmd
  //"terminal.integrated.shell.windows": "C:\\windows\\system32\\cmd.exe",
@@ -225,8 +224,8 @@
    //"composer.workingPath": "E:/xampp/htdocs/web100a/php",   //指定 Workspace 專案目錄,
 
  //============================== PHP 環境設定相關 =====================//
-   "php.validate.enable": true,       //啟用PHP驗證
-   "php.validate.run" : "onSave",   //控制在何時機(onSave、onType)作驗證
+ "php.validate.enable": true,       //啟用PHP驗證
+ "php.validate.run" : "onSave",   //控制在何時機(onSave、onType)作驗證
 
    //============================== PHP IntelliSense =========================//
    "php.suggest.basic": false,  //禁用VScode代碼內置的PHP智能感知設置
@@ -370,9 +369,9 @@
 //    "editor.codeActionsOnSave": {
 //     "source.fixAll.eslint": true
 //      },
-   "workbench.editor.enablePreview": false,
-   "html.format.contentUnformatted": "",
-   "go.toolsManagement.autoUpdate": true,
-   "window.zoomLevel": 1,
-   "go.useLanguageServer": false
+"workbench.editor.enablePreview": false,
+"html.format.contentUnformatted": "",
+"go.toolsManagement.autoUpdate": true,
+"window.zoomLevel": 1,
+"go.gocodeAutoBuild": true
 }
