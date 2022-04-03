@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["timeline"]
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var container = document.getElementById('example3.1');
+            var chart = new google.visualization.Timeline(container);
+            var dataTable = new google.visualization.DataTable();
+            dataTable.addColumn({
+                type: 'string',
+                id: 'Position'
+            });
+            dataTable.addColumn({
+                type: 'string',
+                id: 'Name'
+            });
+            dataTable.addColumn({
+                type: 'date',
+                id: 'Start'
+            });
+            dataTable.addColumn({
+                type: 'date',
+                id: 'End'
+            });
+            dataTable.addRows([
+                ['President', 'George Washington', new Date(2022, 3, 30), new Date(2022, 3, 30)],
+                ['President', 'John Adams', new Date(2022, 2, 4), new Date(2022, 2, 4)],
+                ['President', 'Thomas Jefferson', new Date(2022, 2, 4), new Date(2022, 2, 4)],
+                ['Vice President', 'John Adams', new Date(2022, 3, 21), new Date(2022, 4, 4)]
+            ]);
+            var options = {
+                chart: {
+                    title: 'Box Office Earnings in First Two Weeks of Opening',
+                    subtitle: 'in millions of dollars (USD)'
+                },
+                width: 900,
+                height: 500,
+                axes: {
+                    x: {
+                        0: {
+                            side: 'top'
+                        }
+                    }
+                }
+            }
+            chart.draw(dataTable, options);
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div id="example3.1" style="height: 200px;"></div>
+</body>
+
+</html>

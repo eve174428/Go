@@ -4,7 +4,7 @@
       "editor.formatOnSave": true,
       "editor.codeActionsOnSave": {
          "source.organizeImports": true
-      },
+      }
    },
    "go.testOnSave": true,
    "go.lintOnSave": "package",
@@ -14,7 +14,6 @@
    "gopls": {
       "experimentalWorkspaceModule": true,
    },
-
 
    "bracket-pair-colorizer-2.colors": [
       "Gold",
