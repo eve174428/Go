@@ -1,24 +1,22 @@
 {
-   //golang
-   "[go]":{
-      "editor.formatOnSave": true,
-      "editor.codeActionsOnSave": {
-         "source.organizeImports": true
-      },
+    //======================= Go ======================================//
+    "[go]":{
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+           "source.organizeImports": true
+        },
+     },
+     "go.gocodeAutoBuild": true,
+     "go.toolsManagement.autoUpdate": true,
+     "go.formatTool": "goimports",
+     "go.lintOnSave": "package",
+     "go.testOnSave": true,
+     "go.testFlags": ["-v"],
+     "go.autocompleteUnimportedPackages": true,
+     "gopls": {
+        "experimentalWorkspaceModule": true,
    },
-   "go.formatTool": "goimports",
-   "go.lintOnSave": "package",
-   "go.testOnSave": true,
-   "go.testFlags": ["-v"],
-   "go.autocompleteUnimportedPackages": true,
-   "gopls": {
-      "experimentalWorkspaceModule": true,
-   },
- "bracket-pair-colorizer-2.colors": [
-                                      "Gold",
-                                      "Orchid",
-                                      "LightSkyBlue"
-                                    ],
+
 
    //已開啟的編輯器會讓每次開檔/關檔的時候，檔案總管的檔案清單上下位置晃動，以致於眼球需要經常重新定位，分散注意力。
    //由於已經有「頁籤」可以看已開啟的檔案，用 Ctrl+E 也可以快速找檔案，所以已開啟的編輯器就沒那麼有實用價值了。
@@ -36,11 +34,11 @@
    // 控制編輯器是否應自動設定貼上的內容格式。格式器必須可供使用，而且格式器應該能夠設定文件中一個範圍的格式。
    "editor.cursorStyle": "block",
    "editor.formatOnPaste": false,                       // 關閉程式碼時會自動排版
- "editor.formatOnSave": false,                        // 關閉程式碼存檔時自動排版(縮排)
- "editor.defaultFormatter": "esbenp.prettier-vscode", // 指定排版工具(預設)
+   "editor.formatOnSave": false,                        // 關閉程式碼存檔時自動排版(縮排)
+   "editor.defaultFormatter": "esbenp.prettier-vscode", // 指定排版工具(預設)
 
    "[css]": {
-    "editor.formatOnPaste": true,
+   "editor.formatOnPaste": true,
       "editor.formatOnSave": true,
       "editor.defaultFormatter": "esbenp.prettier-vscode",
    },
@@ -49,13 +47,9 @@
    "html.suggest.ionic": false,
    "[html]": {
       "editor.formatOnSave": true,
-      //在 HTML 貼上 <pre> 區段時，這個設定會導致 <pre> 標籤內的內容也被自動縮排，導致格式亂掉,建議關閉 HTML 的自動縮排功能。
+    //在 HTML 貼上 <pre> 區段時，這個設定會導致 <pre> 標籤內的內容也被自動縮排，導致格式亂掉,建議關閉 HTML 的自動縮排功能。
       "editor.autoIndent": "none",
       "editor.defaultFormatter": "HookyQR.beautify",
-   },
-   "[php]": {
-      "editor.formatOnSave": true,
-     "editor.defaultFormatter": "kokororin.vscode-phpfmt",
    },
    "[javascript]": {
       "editor.formatOnSave": true,
@@ -88,7 +82,7 @@
    // 與 Tab 相等的空格數量。當 `editor.detectIndentation` 已開啟時
    // 一個 tab 鍵的空白間距。
    "editor.tabSize": 4,
- "editor.selectionHighlight": true, //選中相同代碼時，顯示高亮度
+   "editor.selectionHighlight": true, //選中相同代碼時，顯示高亮度
    "editor.quickSuggestions": { //智慧提示
       "other": true,
       "comments": true,
@@ -100,107 +94,106 @@
    "editor.rulers": [
      120
    ],
- "editor.renderLineHighlight" : "line", // line、all
- "workbench.colorCustomizations": {
-   "editor.lineHighlightBackground": "#00000090",
-   "editor.lineHighlightBorder": "#ffffff30"
- },
- "workbench.colorTheme": "Visual Studio Dark", //Default Light+、Solarized Dark、Monokai
-"workbench.iconTheme": "material-icon-theme",
-   // 控制功能表列的可見度。[切換] 設定表示會隱藏功能表列，按一下 Alt 鍵則會顯示。
-   // 除非視窗是全螢幕，否則預設會顯示功能表列。
- // "window.menuBarVisibility": "toggle",
-   // Windows 的換行是 \r\n (CRLF)，而 Linux 是 \n (LF)，會遇到 Windows 開發後放在 Linux 跑時會 error，為了讓事情簡單化就預設是 LF 吧，這是針對新增的，舊的可以從右下角去改變它
-   "files.eol": "\n",
-   // 控制已變更之檔案的自動儲存。接受的值: 'off'、'afterDelay、'onFocusChange' (編輯器失去焦點)、'onWindowChange' (視窗失去焦點)。若設為 'afterDelay'，可以在 "files.autoSaveDelay" 中設定延遲。
-   "files.autoSave": "onWindowChange", // 自動儲存檔案, afterDelay、onWindowChange、onFocusChange
-   "files.autoSaveDelay": 3000,
-   "files.insertFinalNewline": true, // 儲存檔案時在其結尾插入最後一個新行
-   //設定其它副檔名的檔案跟 php 是有關係的
-   "files.associations": {
-      "*.inc": "php",
-      "*.tpl": "html",
-      "*.js": "javascriptreact",
-      "*.csproj": "msbuild"
-   },
-   //新檔為 UTF8
-   "files.encoding": "utf8",
-   "files.trimTrailingWhitespace": true,
-   // 用來忽略工程打開的文件夾 "files.exclude": { "**/.vscode": true, "**/.DS_Store": true, "**/.history":true, "**/nbproject":true }
-   "files.exclude": { "**/.vscode": true,
-                      "**/.DS_Store": true,
-                      "**/.history":true,
-                      "**/nbproject":true
-                    },
-   // 創建和更新代碼的頭部信息作者
-   "fileheader.Author": "Baldwin",
-   "fileheader.LastModifiedBy": "Baldwin",
-   //在預設不支持 Emmet 的語言中啟用 Emmet 縮寫功能，在這添加該語言與受支持的語言間的映射
- //示例: {"vue-html": "html", "javascript", "javascriptreact"}
- //解決 emmet 在 js 檔案無法正常的自動產生 html
-   "emmet.includeLanguages": {
-      "javascript": "javascriptreact", // html
-      "ejs": "html"
-   },
- // 啟用後，按下 TAB 鍵，將展開 Emmet 縮寫
- "emmet.triggerExpansionOnTab": true,
-   //======================= 終端機設定 =======================================//
-   // 預設使用 64-bit cmd
- //"terminal.integrated.shell.windows": "C:\\windows\\system32\\cmd.exe",
-   // 預設使用 64-bit PowerShell
-   //"terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-   // Git Bash
-   //"terminal.integrated.shell.windows": "E:\\Tools\git\\bin\\bash.exe",
-   //shell 切換使用 powershell、cmd、bash （ctrl + shift + `）    //在 Windows 終端機上時要使用的命令列引數:  []
-//     "terminal.integrated.shell.windows": "cmd.exe",
-//  "terminal.integrated.env.windows": {
-   //  "CMDER_ROOT": "E:\\cmder"
-//  },
-//     "terminal.integrated.shellArgs.windows":  [ "/k E:\\cmder\\vendor\\init.bat" ],
-   "terminal.integrated.experimentalTextureCachingStrategy": "dynamic",
-//https://www.itread01.com/content/1574874485.html
-   "search.followSymlinks": false,
-   "files.watcherExclude": {
-      "**/.git/objects/**": true,
-      "**/.git/subtree-cache/**": true,
-      "**/node_modules/**": true,
-      "**/tmp/**": true,
-      "**/bower_components/**": true,
-      "**/dist/**": true
+   "editor.renderLineHighlight" : "line", // line、all
+   "workbench.colorTheme": "Visual Studio Dark", //Default Light+、Solarized Dark、Monokai
+      // 開啟 bracket pair colorization
+   "editor.bracketPairColorization.enabled": true,
+   // 設定顏色
+   "workbench.colorCustomizations": {
+      // 層級括號顏色，從 1 至 6 層，此處只設定了 5 層
+      "editorBracketHighlight.foreground1": "#7777ff",
+      "editorBracketHighlight.foreground2": "#8a2be2",
+      "editorBracketHighlight.foreground3": "#DC143C",
+      "editorBracketHighlight.foreground4": "#5eaaa8",
+      "editorBracketHighlight.foreground5": "#800080",
+      // 異常括號的顏色，比如多出來的結尾括號
+      "editorBracketHighlight.unexpectedBracket.foreground": "#ffffff",
    },
-   // 用來忽略搜索的文件夾
-   "search.exclude": {
-     "**/bower_components": true,
-     "**/vendor": true,
-     "**/build": true,
-     "**/node_modules": true,
-     "**/storage/framework/views": true,
-     "**/.git": true,
-     "**/.svn": true,
-     "**/.hg": true,
-     "**/CVS": true,
-     "**/.DS_Store": true,
-     "**/*.jpg": true,
-     "**/*.jpeg": true,
-     "**/*.png": true,
-     "**/*.gif": true,
-     "**/*.ttf": true,
-     "**/*.tga": true,
-     "**/*.dds": true,
-     "**/*.ico": true,
-     "**/*.eot": true,
-     "**/*.pdf": true,
-     "**/*.swf": true,
-     "**/*.jar": true,
-     "**/*.zip": true,
-     "**/*.map": true
-   },
+   "workbench.iconTheme": "vscode-icons",
+      // 控制功能表列的可見度。[切換] 設定表示會隱藏功能表列，按一下 Alt 鍵則會顯示。
+      // 除非視窗是全螢幕，否則預設會顯示功能表列。
+   // "window.menuBarVisibility": "toggle",
+      // Windows 的換行是 \r\n (CRLF)，而 Linux 是 \n (LF)，會遇到 Windows 開發後放在 Linux 跑時會 error，為了讓事情簡單化就預設是 LF 吧，這是針對新增的，舊的可以從右下角去改變它
+      "files.eol": "\n",
+      // 控制已變更之檔案的自動儲存。接受的值: 'off'、'afterDelay、'onFocusChange' (編輯器失去焦點)、'onWindowChange' (視窗失去焦點)。若設為 'afterDelay'，可以在 "files.autoSaveDelay" 中設定延遲。
+      "files.autoSave": "onWindowChange", // 自動儲存檔案, afterDelay、onWindowChange、onFocusChange
+      "files.autoSaveDelay": 3000,
+      "files.insertFinalNewline": true, // 儲存檔案時在其結尾插入最後一個新行
+      //設定其它副檔名的檔案跟 php 是有關係的
+      "files.associations": {
+         "*.inc": "php",
+         "*.tpl": "html",
+         "*.js": "javascriptreact",
+         "*.csproj": "msbuild"
+      },
+      //新檔為 UTF8
+      "files.encoding": "utf8",
+      "files.trimTrailingWhitespace": true,
+      // 用來忽略工程打開的文件夾 "files.exclude": { "**/.vscode": true, "**/.DS_Store": true, "**/.history":true, "**/nbproject":true }
+      "files.exclude": { "**/.vscode": true,
+                         "**/.DS_Store": true,
+                         "**/.history":true,
+                         "**/nbproject":true
+                       },
+      // 創建和更新代碼的頭部信息作者
+      "fileheader.Author": "Baldwin",
+      "fileheader.LastModifiedBy": "Baldwin",
+      //在預設不支持 Emmet 的語言中啟用 Emmet 縮寫功能，在這添加該語言與受支持的語言間的映射
+   //示例: {"vue-html": "html", "javascript", "javascriptreact"}
+   //解決 emmet 在 js 檔案無法正常的自動產生 html
+      "emmet.includeLanguages": {
+         "javascript": "javascriptreact", // html
+         "ejs": "html"
+      },
+   // 啟用後，按下 TAB 鍵，將展開 Emmet 縮寫
+   "emmet.triggerExpansionOnTab": true,
+
+   //======================= 終端機設定 =======================================//
+      "terminal.integrated.experimentalTextureCachingStrategy": "dynamic",
+   //https://www.itread01.com/content/1574874485.html
+      "search.followSymlinks": false,
+      "files.watcherExclude": {
+         "**/.git/objects/**": true,
+         "**/.git/subtree-cache/**": true,
+         "**/node_modules/**": true,
+         "**/tmp/**": true,
+         "**/bower_components/**": true,
+         "**/dist/**": true
+      },
+      // 用來忽略搜索的文件夾
+      "search.exclude": {
+        "**/bower_components": true,
+        "**/vendor": true,
+        "**/build": true,
+        "**/node_modules": true,
+        "**/storage/framework/views": true,
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.jpg": true,
+        "**/*.jpeg": true,
+        "**/*.png": true,
+        "**/*.gif": true,
+        "**/*.ttf": true,
+        "**/*.tga": true,
+        "**/*.dds": true,
+        "**/*.ico": true,
+        "**/*.eot": true,
+        "**/*.pdf": true,
+        "**/*.swf": true,
+        "**/*.jar": true,
+        "**/*.zip": true,
+        "**/*.map": true
+      },
+
    //======================= Git 設定 ======================================//
    "git.autofetch": true, //讓 VSCode 在背景自動執行 git fetch
    "git.enableCommitSigning": false, //必要時可以啟用 Git 簽章功能 ( 我平時都會設定為 true )
    "git.enableSmartCommit": true, //如果所有變更都還沒有 git add ( Stage ) 的話，預設會自動全部 Commit，不會再先問過。
    "git.confirmSync": false, //當要同步 Git 遠端儲存庫時，不需要再提問。
-  //todo highlight
+   //todo highlight
    "todohighlight.include": [
       "**/*.js",
       "**/*.jsx",
@@ -212,46 +205,19 @@
       "**/*.scss",
       "**/*.cs"
    ],
- //git-autoconfig
+   //git-autoconfig
    "git-autoconfig.configList": [
       {
         "user.email": "eve174428@gmail.com",
         "user.name": "eve174428"
       }
     ],
-   //========================= COMPOSER =================================//       
-   // "composer.executablePath": "E:/composer/composer.bat",
-   //"composer.workingPath": "E:/xampp/htdocs/web100a/php",   //指定 Workspace 專案目錄,
-
- //============================== PHP 環境設定相關 =====================//
- "php.validate.enable": true,       //啟用PHP驗證
- "php.validate.run" : "onSave",   //控制在何時機(onSave、onType)作驗證
-
-   //============================== PHP IntelliSense =========================//
-   "php.suggest.basic": false,  //禁用VScode代碼內置的PHP智能感知設置
-   "php.executablePath": "/usr/local/bin/php", //PHP 執行檔路徑
-   "php.validate.executablePath": "/usr/local/bin/php",
-
-   //======================= phpfmt 設定  ==================================//
-   "phpfmt.php_bin": "php",
-   "phpfmt.passes": [
-     "PSR2KeywordsLowerCase",
-     "PSR2LnAfterNamespace",
-     "PSR2CurlyOpenNextLine",
-     "PSR2ModifierVisibilityStaticOrder",
-     "PSR2SingleEmptyLineAndStripClosingTag",
-     "ReindentSwitchBlocks"
-   ],"phpfmt.exclude": [
-     "ReindentComments",
-     "StripNewlineWithinClassBody"
-   ],
-   "phpfmt.psr2": false,
 
    //======================= prettier 設定 =================================//
    // 每行寬度
    "prettier.printWidth": 150,
- // 縮格空幾格
- "prettier.tabWidth": 4,
+   // 縮格空幾格
+   "prettier.tabWidth": 4,
    // 使用單引號
    "prettier.singleQuote": true,
    // 盡可能省略箭頭函式的括號
@@ -261,13 +227,9 @@
    // 尾隨逗號
    "prettier.trailingComma": "es5", //none       
    "prettier.semi": true, // 句尾加上分號
- "prettier.insertSpaceBeforeFunctionParenthesis": false,
+   "prettier.insertSpaceBeforeFunctionParenthesis": false,
 
- //============================ Vue Setting ====================================//
- "vetur.validation.template": false,
- "vetur.completion.useScaffoldSnippets": false ,
-
-   
+      
 
    //======================= Auto Rename Tag 設定 ==========================//
    //因為 Auto Rename Tag 擴充套件非常好用，但預設會自動套用在所有檔案格式，     這會帶來一些麻煩。
@@ -300,78 +262,62 @@
    },
    "vsicons.dontShowNewVersionMessage": true,
 
-   //======================= HTML CSS SUPPORT ============================//
-   "css.fileExtensions": [
-           "css",
-           "scss"
- //設定遠端的 Bootstrap 的 CSS，
-   ],
- "css.remoteStyleSheets": [
-      "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-   ],
+   //======================= HTML CSS SUPPORT ============================//
+      "css.fileExtensions": [
+              "css",
+              "scss"
+   //設定遠端的 Bootstrap 的 CSS，
+      ],
+   "css.remoteStyleSheets": [
+         "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      ],
 
- //========================= Markdown =================================//
- "markdown.preview.scrollPreviewWithEditorSelection": false,
- "markdown.preview.scrollEditorWithPreview": false,
+   //========================= Markdown =================================//
+   "markdown.preview.scrollPreviewWithEditorSelection": false,
+   "markdown.preview.scrollEditorWithPreview": false,
+   //加入 Markdown 高亮度語法
+   "markdown.styles": [
+      "markdown.css"  //將檔案放在當前工作目錄下，並使用相對路徑存取
+   ],
+   //Markdown Converter
+   "markdownConverter.ConversionType": [
+      "HTML",
+      "PDF"
+   ],
+   "markdownConverter.DestinationPattern": "${workspaceFolder}/output/${dirname}/${basename}.${extension}",
+   // markdown 要產生換行，需在上一行最後面留2個以上空白,  為了保留尾巴空白字在 Markdown 檔案
+   // 保持尾隨空格以創建換行符
+      "[markdown]": {
+      "files.trimTrailingWhitespace": false
+   },
+   // Markdownlint
+   // 取消 Markdownlint 語法錯誤警告
+   "markdownlint.config": {
+      "MD024": false
+   },
+   /***** markdown 截圖保存路徑 *****/
+   // VS Code 在每次開啟檔案時就不會自動幫我們選擇採用的編碼方式了，VS Code 預設的編碼方式為 UTF-8
+   "files.autoGuessEncoding": true,
+   //分隔符號標準
+   "pasteImage.forceUnixStyleSeparator": true,
+   "markdown.preview.breaks": true,
+   //截圖顯示的相對路徑URL
+   "pasteImage.basePath": "${projectRoot}",
+   //截圖保存的資料夾路徑
+   "pasteImage.path": "${projectRoot}/images",
+   "markdown-preview-enhanced.imageFolderPath": "/images",
 
- //加入 Markdown 高亮度語法
- "markdown.styles": [
-     "markdown.css"                //將檔案放在當前工作目錄下，並使用相對路徑存取
- ],
+   //======================= Preview on Web Server =======================
+   "previewServer.ignoreDefaultBroswer": true,
+   "previewServer.port": 9999,
+   "previewServer.ui": {
+            "port": 3001,
+            "weinrePort": 8081
+   },
+   "editor.suggestSelection": "first",
+   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
- //Markdown Converter
-  "markdownConverter.ConversionType": [
-     "HTML",
-     "PDF"
-  ],
-  "markdownConverter.DestinationPattern": "${workspaceFolder}/output/${dirname}/${basename}.${extension}",
-
- // markdown 要產生換行，需在上一行最後面留2個以上空白,  為了保留尾巴空白字在 Markdown 檔案
- // 保持尾隨空格以創建換行符
-    "[markdown]": {
-    "files.trimTrailingWhitespace": false
- },
-
- // Markdownlint
- // 取消 Markdownlint 語法錯誤警告
- "markdownlint.config": {
-     "MD024": false
- },
-
-  /***** markdown 截圖保存路徑 *****/
- // VS Code 在每次開啟檔案時就不會自動幫我們選擇採用的編碼方式了，VS Code 預設的編碼方式為 UTF-8
- "files.autoGuessEncoding": true,
- //分隔符號標準
- "pasteImage.forceUnixStyleSeparator": true,
- "markdown.preview.breaks": true,
- //截圖顯示的相對路徑URL
- "pasteImage.basePath": "${projectRoot}",
- //截圖保存的資料夾路徑
- "pasteImage.path": "${projectRoot}/images",
- "markdown-preview-enhanced.imageFolderPath": "/images",
-
- //======================= Preview on Web Server =======================
- "previewServer.ignoreDefaultBroswer": true,
- "previewServer.port": 9999,
- "previewServer.ui": {
-         "port": 3001,
-         "weinrePort": 8081
- },
- "editor.suggestSelection": "first",
-"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-
-//======================= Picgo =======================
-//    "picgo.picBed.current": "github",
-//    "picgo.picBed.github.branch": "main",
-//    "picgo.picBed.github.token": "",
-//    "picgo.picBed.github.repo": "allen-5183/blog.allen5183.synology.me",
-//    "picgo.picBed.github.path": "images/",
-//    "editor.codeActionsOnSave": {
-//     "source.fixAll.eslint": true
-//      },
-"workbench.editor.enablePreview": false,
-"html.format.contentUnformatted": "",
-"go.toolsManagement.autoUpdate": true,
-"window.zoomLevel": 1,
-"go.gocodeAutoBuild": true
+   "workbench.editor.enablePreview": false,
+   "html.format.contentUnformatted": "",
+   "window.zoomLevel": 1
 }
