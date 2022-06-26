@@ -319,5 +319,16 @@
 
    "workbench.editor.enablePreview": false,
    "html.format.contentUnformatted": "",
-   "window.zoomLevel": 1
+   "window.zoomLevel": 1,
+   "json.schemas": [
+
+
+   ],
+   "editor.accessibilitySupport": "on",
+   "audioCues.onDebugBreak": "off",
+   "audioCues.noInlayHints": "off",
+   "audioCues.lineHasInlineSuggestion": "off",
+   "audioCues.lineHasFoldedArea": "off",
+   "audioCues.lineHasError": "off",
+   "audioCues.lineHasBreakpoint": "off",
 }
